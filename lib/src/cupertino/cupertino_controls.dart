@@ -116,23 +116,23 @@ class _CupertinoControlsState extends State<CupertinoControls>
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          foregroundColor:
+                          backgroundColor:
                               MaterialStatePropertyAll(backgroundColor),
                         ),
-                        child: const Text(
-                          "test",
-                          style: TextStyle(color: Colors.white),
+                        child: Text(
+                          "previous",
+                          style: TextStyle(color: iconColor),
                         ),
                       ),
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          foregroundColor:
+                          backgroundColor:
                               MaterialStatePropertyAll(backgroundColor),
                         ),
-                        child: const Text(
-                          "test2",
-                          style: TextStyle(color: Colors.white),
+                        child: Text(
+                          "skip",
+                          style: TextStyle(color: iconColor),
                         ),
                       ),
                     ],

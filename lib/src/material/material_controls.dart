@@ -99,7 +99,7 @@ class _MaterialControlsState extends State<MaterialControls>
                   ElevatedButton(
                     onPressed: () {},
                     style: const ButtonStyle(
-                      foregroundColor: MaterialStatePropertyAll(
+                      backgroundColor: MaterialStatePropertyAll(
                         Colors.black54,
                       ),
                     ),
@@ -111,7 +111,7 @@ class _MaterialControlsState extends State<MaterialControls>
                   ElevatedButton(
                     onPressed: () {},
                     style: const ButtonStyle(
-                      foregroundColor: MaterialStatePropertyAll(
+                      backgroundColor: MaterialStatePropertyAll(
                         Colors.black54,
                       ),
                     ),
