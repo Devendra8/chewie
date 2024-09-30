@@ -93,6 +93,13 @@ class _MaterialControlsState extends State<MaterialControls>
               else
                 _buildHitArea(),
               _buildActionBar(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(onPressed: () {}, child: const Text("test")),
+                  ElevatedButton(onPressed: () {}, child: const Text("test2"))
+                ],
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
