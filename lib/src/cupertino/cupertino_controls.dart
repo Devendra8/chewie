@@ -109,7 +109,14 @@ class _CupertinoControlsState extends State<CupertinoControls>
                     barHeight,
                     buttonPadding,
                   ),
-                  const Spacer(),
+                  // const Spacer(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(onPressed: () {}, child: Text("test")),
+                      ElevatedButton(onPressed: () {}, child: Text("test2"))
+                    ],
+                  ),
                   if (_subtitleOn)
                     Transform.translate(
                       offset: Offset(
