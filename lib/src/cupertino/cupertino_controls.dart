@@ -113,8 +113,28 @@ class _CupertinoControlsState extends State<CupertinoControls>
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ElevatedButton(onPressed: () {}, child: Text("test")),
-                      ElevatedButton(onPressed: () {}, child: Text("test2"))
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStatePropertyAll(backgroundColor),
+                        ),
+                        child: const Text(
+                          "test",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStatePropertyAll(backgroundColor),
+                        ),
+                        child: const Text(
+                          "test2",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ],
                   ),
                   if (_subtitleOn)

@@ -96,8 +96,30 @@ class _MaterialControlsState extends State<MaterialControls>
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ElevatedButton(onPressed: () {}, child: const Text("test")),
-                  ElevatedButton(onPressed: () {}, child: const Text("test2"))
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      foregroundColor: MaterialStatePropertyAll(
+                        Colors.black54,
+                      ),
+                    ),
+                    child: const Text(
+                      "test 3",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      foregroundColor: MaterialStatePropertyAll(
+                        Colors.black54,
+                      ),
+                    ),
+                    child: const Text(
+                      "test 4",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
               Column(

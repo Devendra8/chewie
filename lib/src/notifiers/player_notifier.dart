@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 ///
@@ -11,12 +13,24 @@ class PlayerNotifier extends ChangeNotifier {
   ) : _hideStuff = hideStuff;
 
   bool _hideStuff;
+  bool _dispose = false;
 
   bool get hideStuff => _hideStuff;
 
   set hideStuff(bool value) {
+    if (_dispose) {
+      log("already disposeeddd");
+    }
     _hideStuff = value;
     notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    log("disposeeddd");
+    _dispose = true;
+    super.dispose();
   }
 
   // ignore: prefer_constructors_over_static_methods
