@@ -110,36 +110,56 @@ class _CupertinoControlsState extends State<CupertinoControls>
                     buttonPadding,
                   ),
                   // const Spacer(),
-                  SafeArea(
-                    minimum: chewieController.controlsSafeAreaMinimum,
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStatePropertyAll(backgroundColor),
+                  AnimatedOpacity(
+                    opacity: notifier.hideStuff ? 0.0 : 1.0,
+                    duration: const Duration(milliseconds: 300),
+                    child: SafeArea(
+                      minimum: chewieController.controlsSafeAreaMinimum,
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(backgroundColor),
+                                shape: MaterialStatePropertyAll<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      10,
+                                    ), // Set border radius here
+                                  ),
+                                ),
+                              ),
+                              child: Text(
+                                "previous",
+                                style: TextStyle(color: iconColor),
+                              ),
                             ),
-                            child: Text(
-                              "previous",
-                              style: TextStyle(color: iconColor),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll(backgroundColor),
+                                shape: MaterialStatePropertyAll<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      10,
+                                    ), // Set border radius here
+                                  ),
+                                ),
+                              ),
+                              child: Text(
+                                "skip",
+                                style: TextStyle(color: iconColor),
+                              ),
                             ),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStatePropertyAll(backgroundColor),
-                            ),
-                            child: Text(
-                              "skip",
-                              style: TextStyle(color: iconColor),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
