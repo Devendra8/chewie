@@ -110,32 +110,38 @@ class _CupertinoControlsState extends State<CupertinoControls>
                     buttonPadding,
                   ),
                   // const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(backgroundColor),
-                        ),
-                        child: Text(
-                          "previous",
-                          style: TextStyle(color: iconColor),
-                        ),
+                  SafeArea(
+                    minimum: chewieController.controlsSafeAreaMinimum,
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStatePropertyAll(backgroundColor),
+                            ),
+                            child: Text(
+                              "previous",
+                              style: TextStyle(color: iconColor),
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStatePropertyAll(backgroundColor),
+                            ),
+                            child: Text(
+                              "skip",
+                              style: TextStyle(color: iconColor),
+                            ),
+                          ),
+                        ],
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(backgroundColor),
-                        ),
-                        child: Text(
-                          "skip",
-                          style: TextStyle(color: iconColor),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                   if (_subtitleOn)
                     Transform.translate(
