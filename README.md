@@ -1,3 +1,5 @@
+Forked project for custom changes using this version could cause unexpected errors.
+
 # chewie
 
 [![Flutter Community: chewie](https://fluttercommunity.dev/_github/header/chewie)](https://github.com/fluttercommunity/community)
