@@ -20,6 +20,7 @@ class PlayerNotifier extends ChangeNotifier {
   set hideStuff(bool value) {
     if (_dispose) {
       log("already disposeeddd");
+      return;
     }
     _hideStuff = value;
     notifyListeners();
@@ -28,7 +29,7 @@ class PlayerNotifier extends ChangeNotifier {
   @override
   void dispose() {
     // TODO: implement dispose
-    log("disposeeddd");
+    log("chewie's notifier disposeeddd");
     _dispose = true;
     super.dispose();
   }
