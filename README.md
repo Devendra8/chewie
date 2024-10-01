@@ -1,4 +1,4 @@
-Forked project for custom changes using this version could cause unexpected errors.
+Forked project for custom changes using my repository's version could cause unexpected errors.
 
 # chewie
 
