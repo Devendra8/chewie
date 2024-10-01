@@ -22,12 +22,14 @@ class CupertinoControls extends StatefulWidget {
     required this.backgroundColor,
     required this.iconColor,
     this.showPlayButton = true,
+    this.extraWidget,
     super.key,
   });
 
   final Color backgroundColor;
   final Color iconColor;
   final bool showPlayButton;
+  final Widget? extraWidget;
 
   @override
   State<StatefulWidget> createState() {
@@ -110,59 +112,17 @@ class _CupertinoControlsState extends State<CupertinoControls>
                     buttonPadding,
                   ),
                   // const Spacer(),
-                  AnimatedOpacity(
-                    opacity: notifier.hideStuff ? 0.0 : 1.0,
-                    duration: const Duration(milliseconds: 300),
-                    child: SafeArea(
-                      minimum: chewieController.controlsSafeAreaMinimum,
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(backgroundColor),
-                                shape: MaterialStatePropertyAll<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                      10,
-                                    ), // Set border radius here
-                                  ),
-                                ),
-                              ),
-                              child: Text(
-                                "previous",
-                                style: TextStyle(color: iconColor),
-                              ),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(backgroundColor),
-                                shape: MaterialStatePropertyAll<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                      10,
-                                    ), // Set border radius here
-                                  ),
-                                ),
-                              ),
-                              child: Text(
-                                "skip",
-                                style: TextStyle(color: iconColor),
-                              ),
-                            ),
-                          ],
-                        ),
+                  if (widget.extraWidget != null)
+                    AnimatedOpacity(
+                      opacity: notifier.hideStuff ? 0.0 : 1.0,
+                      duration: const Duration(milliseconds: 300),
+                      child: SafeArea(
+                        minimum: chewieController.controlsSafeAreaMinimum,
+                        child: Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                            child: widget.extraWidget),
                       ),
                     ),
-                  ),
                   if (_subtitleOn)
                     Transform.translate(
                       offset: Offset(

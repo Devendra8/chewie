@@ -2,9 +2,9 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 
 class AdaptiveControls extends StatelessWidget {
-  const AdaptiveControls({
-    super.key,
-  });
+  const AdaptiveControls({super.key, this.extraWidget});
+
+  final Widget? extraWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,10 @@ class AdaptiveControls extends StatelessWidget {
         return const MaterialDesktopControls();
 
       case TargetPlatform.iOS:
-        return const CupertinoControls(
-          backgroundColor: Color.fromRGBO(41, 41, 41, 0.7),
-          iconColor: Color.fromARGB(255, 200, 200, 200),
+        return CupertinoControls(
+          backgroundColor: const Color.fromRGBO(41, 41, 41, 0.7),
+          iconColor: const Color.fromARGB(255, 200, 200, 200),
+          extraWidget: extraWidget,
         );
       default:
         return const MaterialControls();
